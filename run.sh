@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-clang++ -o main main.cpp
-./main
+cmake -DCMAKE_CXX_COMPILER=clang++ ..
+make
+./blockchain

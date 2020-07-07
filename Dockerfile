@@ -1,9 +1,10 @@
 FROM ubuntu:latest
 
 RUN apt-get -y update
-RUN apt-get install -y clang
+RUN apt-get install -y clang cmake
 
 COPY . /app
-WORKDIR /app
 
-RUN chmod +x run.sh
+RUN chmod +x /app/run.sh
+
+WORKDIR /app/build
