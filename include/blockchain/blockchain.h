@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "block.h"
+#include "utils/types.h"
 
 class Blockchain {
     /*
@@ -15,18 +16,18 @@ class Blockchain {
     /*
      * Data elements are used to create new Block
      * */
-    std::vector<std::string> dataElements;
+    StringVectorPointer dataElements;
     /*
      * Blocks are stored and loaded from State
      * */
-    std::vector<BlockPointer> blocks;
+    std::vector<BlockPointer> blocks = {};
+    void resetDataElements();
 public:
+    Blockchain();
     /*
      * Adds new data string as DataElement
      * */
     void addDataElement(const std::string&);
-    /*
-     *
-     * */
     void createBlock();
+    void getBlock(int);
 };

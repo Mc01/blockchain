@@ -1,7 +1,8 @@
 #include <iostream>
 #include <memory>
 #include <string>
-
+#include <vector>
+#include "utils/types.h"
 
 class Block {
 
@@ -14,21 +15,10 @@ private:
      * - body
      * */
     std::string hash = "0x0";
-    /*
-     * Consecutive number of current Block
-     * */
     int number = 0;
-    /*
-     * Hash to previous block
-     * */
     std::string previousHash = "0x0";
-    /*
-     *
-     * */
-    std::shared_ptr<std::string> body = nullptr;
-    /*
-     *
-     * */
+    StringVectorPointer dataElements = nullptr;
+    StringPointer body = nullptr;
     int elementsCount;
 
 public:
@@ -41,23 +31,10 @@ public:
     Block(
             int,
             const std::string&,
-            const std::shared_ptr<std::string>&,
-            int);
-    /*
-     *
-     * */
+            StringVector );
     void getHeader();
-    /*
-     *
-     * */
     void getBody();
-    /*
-     *
-     * */
     void getHash();
-    /*
-     *
-     * */
     std::string createHash();
 };
 

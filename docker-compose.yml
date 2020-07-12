@@ -3,6 +3,15 @@ version: '3.7'
 services:
   app:
     build: .
+    image: blockchain_node
     volumes:
       - .:/app
     command: .././run.sh
+
+  clion:
+    image: blockchain_node
+    volumes:
+      - .:/app
+    ports:
+    - "2222:22"
+    - "7777:7777"
