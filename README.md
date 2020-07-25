@@ -1,6 +1,8 @@
 # Blockchain
 🔗 Simple blockchain engine written with C++
 
+_Note: This project is still work in progress_
+
 ## Prerequisites
 
 - `docker`
